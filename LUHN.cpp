@@ -1,7 +1,7 @@
 //
 //    FILE: LUHN.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.2
+// VERSION: 0.2.0
 //    DATE: 2022-12-24
 // PURPOSE: Arduino Library for calculating LUHN checksum.
 //     URL: https://github.com/RobTillaart/LUHN
@@ -57,7 +57,7 @@ char LUHN::generateChecksum(char * buffer)
   for (int i = 0; i < length; i++)
   {
     uint8_t x = buffer[i] - '0';
-    if (i % 2 != parity) checksum += x;       //  weight 1
+    if (i % 2 == parity) checksum += x;       //  weight 1
     else if (x < 5) checksum += x * 2;        //  weight 2
          else checksum += (x * 2 - 10 + 1);   //  weight 2 + handle overflow.
   }
