@@ -83,7 +83,7 @@ unittest(test_stream)
   LUHN luhn;
 
   luhn.reset();
-  char buffer[24] = "7992739871"
+  char buffer[24] = "7992739871";
   for (int i = 0; i < strlen(buffer); i++)
   {
     char c = luhn.add(buffer[i]);
