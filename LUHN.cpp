@@ -33,7 +33,7 @@ bool LUHN::isValid(char * buffer)
   for (int i = 0; i < length-1; i++)
   {
     uint8_t x = buffer[i] - '0';
-    if (i % 2 != parity) checksum += x;            //  weight 1
+    if (i % 2 != parity) checksum += x;       //  weight 1
     else if (x < 5) checksum += x * 2;        //  weight 2
          else checksum += (x * 2 - 10 + 1);   //  weight 2 + handle overflow.
   }
@@ -53,10 +53,11 @@ char LUHN::generateChecksum(char * buffer)
 {
   uint16_t checksum = 0;
   uint8_t length = strlen(buffer);
+  uint8_t parity = length & 1;
   for (int i = 0; i < length; i++)
   {
     uint8_t x = buffer[i] - '0';
-    if (i % 2 == 0) checksum += x;            //  weight 1
+    if (i % 2 != parity) checksum += x;       //  weight 1
     else if (x < 5) checksum += x * 2;        //  weight 2
          else checksum += (x * 2 - 10 + 1);   //  weight 2 + handle overflow.
   }
