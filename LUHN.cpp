@@ -29,7 +29,7 @@ bool LUHN::isValid(char * buffer)
   uint8_t length = strlen(buffer);
   if (length == 0) return false;
 
-  for (int i = 0; i < length-1; i++)
+  for (int i = 0; i < length-2; i++)
   {
     uint8_t x = buffer[i] - '0';
     if (i % 2 == 0) checksum += x;            //  weight 1
