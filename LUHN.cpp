@@ -42,6 +42,12 @@ bool LUHN::isValid(char * buffer)
 }
 
 
+char LUHN::generateChecksum(const char * buffer)
+{
+  return generateChecksum((char *) buffer);
+}
+
+
 char LUHN::generateChecksum(char * buffer)
 {
   uint16_t checksum = 0;

@@ -22,6 +22,7 @@ public:
   //        buffer == \0 terminated
   bool      isValid(const char * buffer);
   bool      isValid(char * buffer);
+  char      generateChecksum(const char * buffer);
   char      generateChecksum(char * buffer);
 
   //  GENERATE A PRODUCT ID WITH LUHN CHECKSUM

@@ -46,6 +46,7 @@ The parameter buffer is a '\0' terminated char array. Length should be less than
 - **char generateChecksum(char \* buffer)**
 Returns the char '0'..'9' which is the checksum of the code in the parameter buffer.
 The parameter buffer is a '\0' terminated char array. Length should be less than 254.
+- **char generateChecksum(const char \* buffer)** idem.
 - **bool generate(char \* buffer, uint8_t length, char \* prefix)**
 Generates a char array including LUHN number with a defined prefix of max length.
 Returns false if the prefix exceeds length -1.
