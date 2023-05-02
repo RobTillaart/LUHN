@@ -1,7 +1,7 @@
 //
 //    FILE: LUHN.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.1
+// VERSION: 0.1.2
 //    DATE: 2022-12-24
 // PURPOSE: Arduino Library for calculating LUHN checksum.
 //     URL: https://github.com/RobTillaart/LUHN
@@ -89,10 +89,8 @@ char LUHN::add(char c)
   if (_count % 2 == 0) _luhn += x;
   else if (x < 5)      _luhn += x * 2;
   else                 _luhn += (x * 2 - 10 + 1);
-  //  correct
-  if (_luhn > 9)       _luhn -= 10;
   _count++;
-  return '0' + (10 - _luhn);
+  return '0' + (100 - _luhn) % 10;
 }
 
 

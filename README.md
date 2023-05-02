@@ -57,21 +57,24 @@ Returns false if the prefix exceeds length -1.
 - **char reset()** return last LUHN.
 
 The internal counter for the stream interface is 16 bit.
-This limits the nr of add() calls to about 65530.
-(if this is a problem, make it an uinit32_t)
+This limits the number of add() calls to about 65530.
+If this is a problem, make the internal counter an uint32_t.
+For current implementation the counter is used for even/odd detection,
+so even if it overflows one gets the correct **LUHN**.
+
 
 ## Future
 
-#### must
+#### Must
 
 - update documentation
 
-#### should
+#### Should
 
 - unit tests
 - look for optimization
 
-#### could
+#### Could
 
 - uint32_t interface for up to 8 digit ID's (99.999.999)
   - **isValid(uint32_t)**
