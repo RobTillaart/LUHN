@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [0.1.2] - 2023-05-02
-- fix bug in **add()**
+- fix bugs in stream mode.
 - add minimal unit test
 - add **generateChecksum(const char \* buffer)**
 - updates readme.md

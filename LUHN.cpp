@@ -105,7 +105,7 @@ char LUHN::reset()
   uint8_t last = _luhn;
   _luhn = 0;
   _count = 0;
-  return '0' + (10 - last);
+  return '0' + (100 - last) % 10;
 }
 
 
