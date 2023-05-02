@@ -63,25 +63,25 @@ unittest(test_isValid)
   fprintf(stderr, "Example American Express credit card number\n");
   //  An American Express credit card number starts with number 34 or 37 and
   //  the credit card number has total 15 digits:
-  assertTrue(luhn.isValid("377261620324999");
-  assertTrue(luhn.isValid("349854194206314");
+  assertTrue(luhn.isValid("377261620324999"));
+  assertTrue(luhn.isValid("349854194206314"));
 
   fprintf(stderr, "Example Mastercard credit card number\n");
   //  A Mastercard credit card number starts with number 51, 52, 53, 54 or 55 and
   //  the credit card number has total 16 digits:
-  assertTrue(luhn.isValid("5181975718047403");
-  assertTrue(luhn.isValid("5204571199083364");
-  assertTrue(luhn.isValid("5322683667269933");
-  assertTrue(luhn.isValid("5477754834149242");
-  assertTrue(luhn.isValid("5539624233693270");
+  assertTrue(luhn.isValid("5181975718047403"));
+  assertTrue(luhn.isValid("5204571199083364"));
+  assertTrue(luhn.isValid("5322683667269933"));
+  assertTrue(luhn.isValid("5477754834149242"));
+  assertTrue(luhn.isValid("5539624233693270"));
 
   fprintf(stderr, "Example Laser credit card number\n");
   //  A Laser credit card number starts with number 6304, 6706, 6771 or 6709 and
   //  the credit card number has total 16, 17, 18 or 19 digits:
-  assertTrue(luhn.isValid("670676038979126821");
-  assertTrue(luhn.isValid("6771363087405086");
-  assertTrue(luhn.isValid("6304096514549839");
-  assertTrue(luhn.isValid("6304219447607087665");
+  assertTrue(luhn.isValid("670676038979126821"));
+  assertTrue(luhn.isValid("6771363087405086"));
+  assertTrue(luhn.isValid("6304096514549839"));
+  assertTrue(luhn.isValid("6304219447607087665"));
 }
 
 
