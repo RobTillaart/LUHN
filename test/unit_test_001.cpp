@@ -51,6 +51,7 @@ unittest(test_isValid)
 
   assertTrue(luhn.isValid("0"));
   assertTrue(luhn.isValid("79927398713"));
+  assertTrue(luhn.isValid("1111111"));
   assertTrue(luhn.isValid("11111111111111111111"));
 }
 
