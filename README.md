@@ -74,32 +74,22 @@ Returns false if the prefix exceeds length -1.
 - **uint32_t count()** return internal counter.
 If this value is zero, a new LUHN can be calculated, otherwise call **reset()** first.
 
-The internal counter for the stream interface is 16 bit.
-This limits the number of add() calls to about 65530.
-If this is a problem, make the internal counter an uint32_t.
+The internal counter for the stream interface is 32 bit.
+This limits the number of add() calls to about 4 billion.
 For current implementation the counter is used for even/odd detection,
-so even if it overflows one gets the correct **LUHN**.
+and even when it overflows one gets the correct **LUHN**.
 
 
 ## Future
 
 #### Must
 
-- update documentation
 
 #### Should
 
-- unit tests
-- look for optimization
+- look for optimizations
 
 #### Could
-
-- uint32_t interface for up to 8 digit ID's (99.999.999)
-  - **isValid(uint32_t)**
-  - **generateChecksum(uint32_t)**
-  - how about leading zero's
-- uint64_t interface for up to 17 digits.
-  - expensive on small processors.
 
 
 #### Won't (unless)
@@ -110,5 +100,8 @@ so even if it overflows one gets the correct **LUHN**.
   - mod N configurable so not only 10 but any N?
 - uint64_t interface for up to 17 digits.
   - expensive on small processors.
-
+- uint32_t interface for up to 8 digit ID's (99.999.999)
+  - **isValid(uint32_t)**
+  - **generateChecksum(uint32_t)**
+  - how about leading zero's
 
