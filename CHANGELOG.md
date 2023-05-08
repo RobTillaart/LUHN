@@ -6,11 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [0.2.0] - 2023-05-02
+## [0.2.0] - 2023-05-08
 - add unit test
+- fix stream mode - **add()** and **reset()**
 - fix bugs in generation / validation.
 - add **generateChecksum(const char \* buffer)**
 - updates readme.md
+- 0.1.x versions are obsolete
+
 
 ----
 

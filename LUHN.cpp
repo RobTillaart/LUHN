@@ -12,8 +12,9 @@
 
 LUHN::LUHN()
 {
-  _luhn = 0;
-  _count = 0;
+  _luhnEven = 0;
+  _luhnOdd  = 0;
+  _count    = 0;
 }
 
 
@@ -91,22 +92,37 @@ bool LUHN::generate(char * buffer, uint8_t length, char * prefix)
 }
 
 
+//////////////////////////////////////////////////////////////
+//
+//  STREAM INTERFACE
+//
 char LUHN::add(char c)
 {
+  //  as we do not know the final length in advance 
+  // both parity's must be calculated.
   uint8_t x = c - '0';
-  if (_count % 2 == 0) _luhn += x;
-  else if (x < 5)      _luhn += x * 2;
-  else                 _luhn += (x * 2 - 10 + 1);
+  //  handle even lengths
+  if (_count % 2 == 0) _luhnEven += x;
+  else if (x < 5)      _luhnEven += x * 2;
+  else                 _luhnEven += (x * 2 - 10 + 1);
+  //  handle odd lengths
+  if (_count % 2 == 1) _luhnOdd += x;
+  else if (x < 5)      _luhnOdd += x * 2;
+  else                 _luhnOdd += (x * 2 - 10 + 1);
+  
   _count++;
-  return '0' + (100 - _luhn) % 10;
+  if (_count & 1) return '0' + (100 - _luhnOdd) % 10;
+  return '0' + (100 - _luhnEven) % 10;
 }
 
 
 char LUHN::reset()
 {
-  uint8_t last = _luhn;
-  _luhn = 0;
-  _count = 0;
+  uint8_t last = _luhnEven;
+  if (_count & 1) last = _luhnOdd;
+  _luhnEven = 0;
+  _luhnOdd  = 0;
+  _count    = 0;
   return '0' + (100 - last) % 10;
 }
 

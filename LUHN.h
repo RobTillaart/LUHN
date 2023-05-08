@@ -39,7 +39,8 @@ protected:
   uint32_t  m_z = 2;  //  random generator parameter
   uint8_t   Marsaglia_mod10();
   
-  uint8_t   _luhn = 0;
+  uint8_t   _luhnEven = 0;
+  uint8_t   _luhnOdd = 0;
   uint16_t  _count = 0;
 };
 

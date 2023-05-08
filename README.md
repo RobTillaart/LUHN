@@ -24,6 +24,7 @@ Note: some LUHN validations uses the reversed product string.
 
 - https://en.wikipedia.org/wiki/Luhn_algorithm
 
+0.1.x versions are obsolete due to incorrect math.
 
 #### related
 
@@ -81,4 +82,6 @@ so even if it overflows one gets the correct **LUHN**.
   - **isValid(uint32_t)**
   - **generateChecksum(uint32_t)**
   - how about leading zero's
+
+#### Won't
 
