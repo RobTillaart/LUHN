@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix stream mode - **add()** and **reset()**
 - fix bugs in generation / validation.
 - add **generateChecksum(const char \* buffer)**
+- change **count** to be 32 bit to support really large streams.
+- add **count()** function to return internal counter.
 - updates readme.md
 - 0.1.x versions are obsolete
 

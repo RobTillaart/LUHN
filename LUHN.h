@@ -32,16 +32,16 @@ public:
   //  STREAM INTERFACE
   char      add(char c);
   char      reset();
-
+  uint32_t  count();
 
 protected:
   uint32_t  m_w = 1;  //  random generator parameter
   uint32_t  m_z = 2;  //  random generator parameter
   uint8_t   Marsaglia_mod10();
-  
-  uint8_t   _luhnEven = 0;
-  uint8_t   _luhnOdd = 0;
-  uint16_t  _count = 0;
+
+  uint16_t  _luhnEven = 0;
+  uint16_t  _luhnOdd = 0;
+  uint32_t  _count = 0;
 };
 
 

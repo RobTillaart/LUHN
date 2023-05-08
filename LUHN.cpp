@@ -127,6 +127,12 @@ char LUHN::reset()
 }
 
 
+uint32_t LUHN::count()
+{
+  return _count;
+}
+
+
 ///////////////////////////////////////////////////////////////////////////
 //
 //  PROTECTED
@@ -145,6 +151,26 @@ uint8_t LUHN::Marsaglia_mod10()
     m_w = 18000L * (m_w & 65535L) + (m_w >> 16);
     return (m_z ^ m_w) % 10;   //  changed
 }
+
+
+//  EXPERIMENTAL
+//  ~8% faster and 58 bytes bigger (UNO)
+// uint8_t LUHN::Marsaglia_mod10()
+// {
+  // static uint32_t value;
+  // static uint8_t  digits = 0;
+  // if (digits == 0)
+  // {
+    // digits = 4;
+    // m_z = 36969L * (m_z & 65535L) + (m_z >> 16);
+    // m_w = 18000L * (m_w & 65535L) + (m_w >> 16);
+    // value = (m_z ^ m_w);
+  // }
+  // uint8_t rv = value % 10;
+  // value >>= 8;
+  // digits--;
+  // return rv;
+// }
 
 
 //  -- END OF FILE --
