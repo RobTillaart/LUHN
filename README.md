@@ -42,7 +42,7 @@ However that is not tested for obvious reasons, internally a 32 bit counter exis
 - 0.1.x versions are obsolete due to incorrect math.
 
 
-#### Links
+#### Related
 
 - https://en.wikipedia.org/wiki/Luhn_algorithm
 - https://github.com/RobTillaart/Adler
